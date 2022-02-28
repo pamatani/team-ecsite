@@ -1,0 +1,24 @@
+package jp.co.internous.amethyst.model.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import jp.co.internous.amethyst.model.domain.MstCategory;
+
+/**
+* mst_categoryにアクセスするDAO
+* @author pamatani
+*
+*/
+@Mapper
+public interface MstCategoryMapper {
+	
+	/**
+	* カテゴリー情報を取得する
+	* @return カテゴリー情報リスト
+	*/
+	@Select("SELECT * FROM mst_category")
+	List<MstCategory> find();
+}
